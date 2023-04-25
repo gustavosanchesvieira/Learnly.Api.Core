@@ -93,3 +93,13 @@ D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\obj\Debug\n
 D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\obj\Debug\net6.0\Learnly.Api.Core.pdb
 D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\obj\Debug\net6.0\Learnly.Api.Core.genruntimeconfig.cache
 D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\obj\Debug\net6.0\ref\Learnly.Api.Core.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\AutoMapper.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\FluentResults.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

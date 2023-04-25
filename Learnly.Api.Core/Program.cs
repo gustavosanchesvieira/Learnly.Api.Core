@@ -1,5 +1,6 @@
 using Learnly.Api.Core.Configuration;
 using Learnly.Api.Core.Data;
+using Learnly.Api.Core.Services;
 using Learnly.Api.Core.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -7,8 +8,6 @@ using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
 
 string conexaoDb = builder.Configuration.GetConnectionString("connectionMySql");
 builder.Services.AddDbContext<DataContext>(x => x.UseMySql(conexaoDb, ServerVersion.AutoDetect(conexaoDb)));
@@ -26,6 +25,11 @@ builder.Services.AddSwaggerGen(
             });
         }
     );
+
+builder.Services.AddScoped<StudentsService, StudentsService>();
+builder.Services.AddScoped<SubjectsService, SubjectsService>();
+builder.Services.AddControllers();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.SetUpSwagger();
 
 var app = builder.Build();
