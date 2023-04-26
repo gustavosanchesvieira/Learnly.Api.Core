@@ -103,3 +103,13 @@ D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\n
 D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\_Gustavo Vieira\Pessoal\Learnly\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\AutoMapper.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\FluentResults.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
