@@ -1,14 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Learnly.Api.Core.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Learnly.Api.Core.Models
 {
-    public class Abcences
+    public class Lessons
     {
         [Key]
         [Required]
         public int Id { get; set; }
-        public int Amount { get; set; }
-        public int AbcencesLimit { get; set; }
+        public DaysWeek DayWeek { get; set; }
+        public string Scheduled { get; set; }
         public Subjects Subject { get; set; }
         public int SubjectId { get; set; }
     }

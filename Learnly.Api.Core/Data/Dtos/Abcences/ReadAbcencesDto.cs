@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public int Amount { get; set; }
         public int AbcencesLimit { get; set; }
-        public Models.Subjects Subject { get; set; }
+        public string SubjectName { get; set; }
     }
 }
