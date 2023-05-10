@@ -10,12 +10,10 @@ namespace Learnly.Api.Core.Services
     public class TeacherService : IServiceBase<Teacher>
     {
         private DataContext _dbContext;
-        private IMapper _mapper;
 
-        public TeacherService(DataContext dbContext, IMapper mapper)
+        public TeacherService(DataContext dbContext)
         {
             _dbContext = dbContext;
-            _mapper = mapper;
         }
 
         public DefaultResponse Create(Teacher obj)

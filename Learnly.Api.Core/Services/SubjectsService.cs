@@ -10,12 +10,10 @@ namespace Learnly.Api.Core.Services
     public class SubjectsService : IServiceBase<Subjects>
     {
         private DataContext _dbContext;
-        private IMapper _mapper;
 
-        public SubjectsService(DataContext dbContext, IMapper mapper)
+        public SubjectsService(DataContext dbContext)
         {
             _dbContext = dbContext;
-            _mapper = mapper;
         }
 
         public DefaultResponse Create(Subjects obj)
