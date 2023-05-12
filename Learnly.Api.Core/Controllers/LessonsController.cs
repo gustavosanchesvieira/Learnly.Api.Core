@@ -19,13 +19,14 @@ namespace Learnly.Api.Core.Controllers
         }
 
         [HttpGet("getGridSchedules")]
-        public IActionResult GetGridSchedules()
+        public IActionResult GetGridSchedules([FromQuery] int studentId)
         {
             try
             {
                 var lessons = _lessonsService.Get();
                 if (lessons != null)
                 {
+                    
                     var lessonsGrid = _mapper.Map<List<ReadLessonsDto>>(lessons);
                     return Ok(lessonsGrid);
                 }

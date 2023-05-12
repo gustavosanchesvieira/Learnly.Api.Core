@@ -11,5 +11,7 @@ namespace Learnly.Api.Core.Models
         public int AbcencesLimit { get; set; }
         public Subjects Subject { get; set; }
         public int SubjectId { get; set; }
+        public Students Student { get; set; }
+        public int StudentId { get; set; }
     }
 }

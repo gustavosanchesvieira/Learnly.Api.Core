@@ -19,13 +19,14 @@ namespace Learnly.Api.Core.Controllers
         }
 
         [HttpGet("getGridAbcences")]
-        public IActionResult GetGridAbcences()
+        public IActionResult GetGridAbcences([FromQuery] int studentId)
         {
             try
             {
                 var abcences = _abcencesService.Get();
                 if (abcences != null)
                 {
+                    abcences = abcences.Where(x => x.StudentId == studentId).ToList();
                     var abcencesGrid = _mapper.Map<List<ReadAbcencesDto>>(abcences);
                     return Ok(abcencesGrid);
                 }

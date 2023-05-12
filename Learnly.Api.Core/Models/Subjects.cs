@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Learnly.Api.Core.Models
 {
@@ -11,5 +12,7 @@ namespace Learnly.Api.Core.Models
         public int WorkLoad { get; set; }
         public Teacher Teacher { get; set; }
         public int TeacherId { get; set; }
+        [JsonIgnore]
+        public List<Matriculation> Matriculations { get; set; }
     }
 }
