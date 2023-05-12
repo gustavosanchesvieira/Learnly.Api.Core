@@ -1,31 +1,29 @@
-﻿using AutoMapper;
-using Learnly.Api.Core.Data;
+﻿using Learnly.Api.Core.Data;
 using Learnly.Api.Core.Interfaces;
 using Learnly.Api.Core.Models;
 using Learnly.Api.Core.Utils;
-using Microsoft.EntityFrameworkCore;
 
 namespace Learnly.Api.Core.Services
 {
-    public class StudentsService : IServiceBase<Students>
+    public class LessonsService : IServiceBase<Lessons>
     {
         private DataContext _dbContext;
 
-        public StudentsService(DataContext dbContext)
+        public LessonsService(DataContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public DefaultResponse Create(Students obj)
+        public DefaultResponse Create(Lessons obj)
         {
             try
             {
-                _dbContext.Students.Add(obj);
+                _dbContext.Lessons.Add(obj);
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
                     Sucesso = true,
-                    Message = "Aluno criado com sucesso!"
+                    Message = "Horario de aula criado com sucesso!"
                 };
             }
             catch (Exception f)
@@ -33,7 +31,7 @@ namespace Learnly.Api.Core.Services
                 return new DefaultResponse
                 {
                     Sucesso = false,
-                    Message = "Erro ao tentar criar aluno" + f.Message
+                    Message = "Erro ao tentar criar horario de aula" + f.Message
                 };
             }
         }
@@ -42,21 +40,21 @@ namespace Learnly.Api.Core.Services
         {
             try
             {
-                var student = _dbContext.Students.FirstOrDefault(x => x.Id == id);
-                if (student == null)
+                var lesson = _dbContext.Lessons.FirstOrDefault(x => x.Id == id);
+                if (lesson == null)
                 {
                     return new DefaultResponse
                     {
                         Sucesso = false,
-                        Message = "O aluno não foi encontrado."
+                        Message = "Horario de aula não encontrado."
                     };
                 }
-                _dbContext.Remove(student);
+                _dbContext.Remove(lesson);
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
                     Sucesso = true,
-                    Message = "O aluno foi excluído com sucesso!"
+                    Message = "O horario de aula foi excluído com sucesso!"
                 };
             }
             catch (Exception f)
@@ -64,16 +62,16 @@ namespace Learnly.Api.Core.Services
                 return new DefaultResponse
                 {
                     Sucesso = false,
-                    Message = "Ocoreu um erro ao tentar deletar o aluno: " + f.Message
+                    Message = "Ocoreu um erro ao tentar excluir o horario de aula: " + f.Message
                 };
             }
         }
 
-        public IList<Students>? Get()
+        public IList<Lessons>? Get()
         {
             try
             {
-                return _dbContext.Students.ToList();
+                return _dbContext.Lessons.ToList();
             }
             catch (Exception)
             {
@@ -81,12 +79,12 @@ namespace Learnly.Api.Core.Services
             }
         }
 
-        public Students? GetById(int id)
+        public Lessons? GetById(int id)
         {
             try
             {
-                var student = _dbContext.Students.FirstOrDefault(x => x.Id == id);
-                return student;
+                var lesson = _dbContext.Lessons.FirstOrDefault(x => x.Id == id);
+                return lesson;
             }
             catch (Exception)
             {
@@ -94,35 +92,33 @@ namespace Learnly.Api.Core.Services
             }
         }
 
-        public DefaultResponse Update(Students obj)
+        public DefaultResponse Update(Lessons obj)
         {
             try
             {
-                var student = _dbContext.Subjects.FirstOrDefault(x => x.Id == obj.Id);
-                if (student == null)
+                var lesson = _dbContext.Lessons.FirstOrDefault(x => x.Id == obj.Id);
+                if (lesson == null)
                 {
                     return new DefaultResponse
                     {
                         Sucesso = false,
-                        Message = "O aluno não foi encontrado."
+                        Message = "Horario de aula não encontrado."
                     };
                 }
-
-                _dbContext.Update(obj);
+                _dbContext.Update(lesson);
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
                     Sucesso = true,
-                    Message = "O aluno foi atualizada com sucesso!"
+                    Message = "Horário de aula atualizado com sucesso!"
                 };
-
             }
             catch (Exception f)
             {
                 return new DefaultResponse
                 {
                     Sucesso = false,
-                    Message = "Ocoreu um erro ao tentar atualizar o aluno: " + f.Message
+                    Message = "Ocoreu um erro ao tentar atualizar o horário de aula: " + f.Message
                 };
             }
         }

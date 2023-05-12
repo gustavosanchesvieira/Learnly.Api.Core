@@ -1,31 +1,29 @@
-﻿using AutoMapper;
-using Learnly.Api.Core.Data;
+﻿using Learnly.Api.Core.Data;
 using Learnly.Api.Core.Interfaces;
 using Learnly.Api.Core.Models;
 using Learnly.Api.Core.Utils;
-using Microsoft.EntityFrameworkCore;
 
 namespace Learnly.Api.Core.Services
 {
-    public class StudentsService : IServiceBase<Students>
+    public class AbcencesService : IServiceBase<Abcences>
     {
         private DataContext _dbContext;
 
-        public StudentsService(DataContext dbContext)
+        public AbcencesService(DataContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public DefaultResponse Create(Students obj)
+        public DefaultResponse Create(Abcences obj)
         {
             try
             {
-                _dbContext.Students.Add(obj);
+                _dbContext.Abcenses.Add(obj);
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
                     Sucesso = true,
-                    Message = "Aluno criado com sucesso!"
+                    Message = "Falta lançada com sucesso!"
                 };
             }
             catch (Exception f)
@@ -33,7 +31,7 @@ namespace Learnly.Api.Core.Services
                 return new DefaultResponse
                 {
                     Sucesso = false,
-                    Message = "Erro ao tentar criar aluno" + f.Message
+                    Message = "Erro ao tentar lançar falta" + f.Message
                 };
             }
         }
@@ -42,21 +40,21 @@ namespace Learnly.Api.Core.Services
         {
             try
             {
-                var student = _dbContext.Students.FirstOrDefault(x => x.Id == id);
-                if (student == null)
+                var abcence = _dbContext.Abcenses.FirstOrDefault(x => x.Id == id);
+                if (abcence == null)
                 {
                     return new DefaultResponse
                     {
                         Sucesso = false,
-                        Message = "O aluno não foi encontrado."
+                        Message = "A fala não foi encontrada."
                     };
                 }
-                _dbContext.Remove(student);
+                _dbContext.Remove(abcence);
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
                     Sucesso = true,
-                    Message = "O aluno foi excluído com sucesso!"
+                    Message = "A falta foi excluída com sucesso!"
                 };
             }
             catch (Exception f)
@@ -64,16 +62,16 @@ namespace Learnly.Api.Core.Services
                 return new DefaultResponse
                 {
                     Sucesso = false,
-                    Message = "Ocoreu um erro ao tentar deletar o aluno: " + f.Message
+                    Message = "Ocoreu um erro ao tentar deletar a falta: " + f.Message
                 };
             }
         }
 
-        public IList<Students>? Get()
+        public IList<Abcences>? Get()
         {
             try
             {
-                return _dbContext.Students.ToList();
+                return _dbContext.Abcenses.ToList();
             }
             catch (Exception)
             {
@@ -81,12 +79,12 @@ namespace Learnly.Api.Core.Services
             }
         }
 
-        public Students? GetById(int id)
+        public Abcences? GetById(int id)
         {
             try
             {
-                var student = _dbContext.Students.FirstOrDefault(x => x.Id == id);
-                return student;
+                var abcence = _dbContext.Abcenses.FirstOrDefault(x => x.Id == id);
+                return abcence;
             }
             catch (Exception)
             {
@@ -94,35 +92,33 @@ namespace Learnly.Api.Core.Services
             }
         }
 
-        public DefaultResponse Update(Students obj)
+        public DefaultResponse Update(Abcences obj)
         {
             try
             {
-                var student = _dbContext.Subjects.FirstOrDefault(x => x.Id == obj.Id);
-                if (student == null)
+                var abcence = _dbContext.Abcenses.FirstOrDefault(x => x.Id == obj.Id);
+                if (abcence == null)
                 {
                     return new DefaultResponse
                     {
                         Sucesso = false,
-                        Message = "O aluno não foi encontrado."
+                        Message = "A fala não foi encontrada."
                     };
                 }
-
-                _dbContext.Update(obj);
+                _dbContext.Update(abcence);
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
                     Sucesso = true,
-                    Message = "O aluno foi atualizada com sucesso!"
+                    Message = "A falta foi atualizada com sucesso!"
                 };
-
             }
             catch (Exception f)
             {
                 return new DefaultResponse
                 {
                     Sucesso = false,
-                    Message = "Ocoreu um erro ao tentar atualizar o aluno: " + f.Message
+                    Message = "Ocoreu um erro ao tentar atualizar a falta: " + f.Message
                 };
             }
         }
