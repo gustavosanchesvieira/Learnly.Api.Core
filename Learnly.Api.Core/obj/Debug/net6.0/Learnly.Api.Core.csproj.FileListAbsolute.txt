@@ -6,7 +6,6 @@ B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Learnly.Api.Core.runti
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Learnly.Api.Core.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Learnly.Api.Core.pdb
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Humanizer.dll
-B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
@@ -22,7 +21,6 @@ B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.Extensions.O
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.OpenApi.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\MySqlConnector.dll
-B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Newtonsoft.Json.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -113,3 +111,9 @@ B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityMode
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\Mono.TextTemplating.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.CodeDom.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\System.Text.Json.dll
+B:\Dev\Learnly.Api.Core\Learnly.Api.Core\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
