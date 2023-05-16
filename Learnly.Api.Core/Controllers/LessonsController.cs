@@ -26,7 +26,13 @@ namespace Learnly.Api.Core.Controllers
                 var lessons = _lessonsService.Get();
                 if (lessons != null)
                 {
-                    
+                    /*
+                     SELECT *
+'                       FROM lessons a
+'                       INNER JOIN subjects b ON a.SubjectId = b.Id
+'                       INNER JOIN matriculations c ON c.SubjectId = b.Id
+'                       WHERE c.StudentId IN ()
+                     */
                     var lessonsGrid = _mapper.Map<List<ReadLessonsDto>>(lessons);
                     return Ok(lessonsGrid);
                 }
