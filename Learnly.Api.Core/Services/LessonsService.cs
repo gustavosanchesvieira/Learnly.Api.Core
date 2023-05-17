@@ -1,4 +1,5 @@
 ﻿using Learnly.Api.Core.Data;
+using Learnly.Api.Core.Data.Dtos.Lessons;
 using Learnly.Api.Core.Interfaces;
 using Learnly.Api.Core.Models;
 using Learnly.Api.Core.Utils;
@@ -120,6 +121,29 @@ namespace Learnly.Api.Core.Services
                     Sucesso = false,
                     Message = "Ocoreu um erro ao tentar atualizar o horário de aula: " + f.Message
                 };
+            }
+        }
+
+        public List<ReadLessonsDto> GetScheduledLessonsByStudent(int studentId)
+        {
+            try
+            {
+                var query = from lessons in _dbContext.Lessons
+                            join subjects in _dbContext.Subjects on lessons.SubjectId equals subjects.Id
+                            join matriculations in _dbContext.Matriculations on subjects.Id equals matriculations.SubjectId
+                            where matriculations.StudentId == studentId
+                            select new ReadLessonsDto
+                            {
+                                Id = lessons.Id,
+                                DayWeek = lessons.DayWeek,
+                                Scheduled = lessons.Scheduled,
+                                SubjectName = subjects.Name
+                            };
+                return query.ToList();
+            }
+            catch (Exception f)
+            {
+                throw new Exception("Erro ao buscar horários das matérias: " + f.Message);
             }
         }
 
