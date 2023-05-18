@@ -37,5 +37,6 @@ namespace Learnly.Api.Core.Data
         public DbSet<Lessons> Lessons { get; set; }
         public DbSet<Grades> Grades { get; set; }
         public DbSet<Matriculation> Matriculations { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

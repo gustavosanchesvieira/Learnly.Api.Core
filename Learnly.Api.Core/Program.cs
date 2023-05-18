@@ -32,6 +32,8 @@ builder.Services.AddScoped<TeacherService, TeacherService>();
 builder.Services.AddScoped<AbcencesService, AbcencesService>();
 builder.Services.AddScoped<LessonsService, LessonsService>();
 builder.Services.AddScoped<MatriculationService, MatriculationService>();
+builder.Services.AddScoped<GradesService, GradesService>();
+builder.Services.AddScoped<UserService, UserService>();
 
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
