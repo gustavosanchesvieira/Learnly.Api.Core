@@ -24,7 +24,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Professor criado com sucesso!"
                 };
             }
@@ -32,7 +32,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar criar professor" + f.Message
                 };
             }
@@ -47,7 +47,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "Professor não encontrado."
                     };
                 }
@@ -55,7 +55,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Professor deletado com sucesso!"
                 };
             }
@@ -63,7 +63,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar deletar professor" + f.Message
                 };
             }
@@ -103,7 +103,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "Professor não encontrado."
                     };
                 }
@@ -111,7 +111,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Professor atualizado com sucesso!"
                 };
             }
@@ -119,7 +119,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar deletar professor" + f.Message
                 };
             }

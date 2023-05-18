@@ -23,7 +23,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Horario de aula criado com sucesso!"
                 };
             }
@@ -31,7 +31,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar criar horario de aula" + f.Message
                 };
             }
@@ -46,7 +46,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "Horario de aula não encontrado."
                     };
                 }
@@ -54,7 +54,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "O horario de aula foi excluído com sucesso!"
                 };
             }
@@ -62,7 +62,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar excluir o horario de aula: " + f.Message
                 };
             }
@@ -102,7 +102,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "Horario de aula não encontrado."
                     };
                 }
@@ -110,7 +110,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Horário de aula atualizado com sucesso!"
                 };
             }
@@ -118,7 +118,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar atualizar o horário de aula: " + f.Message
                 };
             }

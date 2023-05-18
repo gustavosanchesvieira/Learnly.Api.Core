@@ -22,7 +22,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Falta lançada com sucesso!"
                 };
             }
@@ -30,7 +30,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar lançar falta" + f.Message
                 };
             }
@@ -45,7 +45,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "A fala não foi encontrada."
                     };
                 }
@@ -53,7 +53,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "A falta foi excluída com sucesso!"
                 };
             }
@@ -61,7 +61,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar deletar a falta: " + f.Message
                 };
             }
@@ -101,7 +101,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "A fala não foi encontrada."
                     };
                 }
@@ -109,7 +109,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "A falta foi atualizada com sucesso!"
                 };
             }
@@ -117,9 +117,23 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar atualizar a falta: " + f.Message
                 };
+            }
+        }
+
+        public Abcences? GetAbcenceSubjectByStudent(int studentId, int subjectId)
+        {
+            try
+            {
+                var abcence = _dbContext.Abcenses.FirstOrDefault(x => x.StudentId == studentId 
+                && x.SubjectId == subjectId);
+                return abcence;
+            }
+            catch (Exception f)
+            {
+                throw new Exception("Erro ao recuperar falta da matéria: " + f.Message);
             }
         }
     }

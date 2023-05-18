@@ -10,6 +10,7 @@ namespace Learnly.Api.Core.Profiles
         {
             CreateMap<Abcences, ReadAbcencesDto>().
                 ForMember(x => x.SubjectName, y => y.MapFrom(z => z.Subject.Name));
+            CreateMap<CreateAbcenceDto, Abcences>();
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Learnly.Api.Core.Models
         [Required]
         public int Id { get; set; }
         public int Amount { get; set; }
-        public int AbcencesLimit { get; set; }
         public Subjects Subject { get; set; }
         public int SubjectId { get; set; }
         public Students Student { get; set; }

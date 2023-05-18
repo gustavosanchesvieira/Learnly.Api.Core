@@ -21,7 +21,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Matrícula lançada com sucesso!"
                 };
             }
@@ -29,7 +29,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar lançar matrícula" + f.Message
                 };
             }
@@ -67,7 +67,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "A matrícula não foi encontrada."
                     };
                 }
@@ -75,7 +75,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "A matrícula foi atualizada com sucesso!"
                 };
             }
@@ -83,7 +83,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar atualizar a matrícula: " + f.Message
                 };
             }

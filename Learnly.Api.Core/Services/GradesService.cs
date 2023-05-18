@@ -22,7 +22,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "Notas salvas com sucesso!"
                 };
             }
@@ -30,7 +30,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Erro ao tentar salvar notas de aula" + f.Message
                 };
             }
@@ -45,7 +45,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "Notas não encontradas."
                     };
                 }
@@ -53,7 +53,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "As notas foram excluidas com sucesso!"
                 };
             }
@@ -61,7 +61,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar excluir as notas: " + f.Message
                 };
             }
@@ -100,7 +100,7 @@ namespace Learnly.Api.Core.Services
                 {
                     return new DefaultResponse
                     {
-                        Sucesso = false,
+                        Sucess = false,
                         Message = "Notas não encontradas."
                     };
                 }
@@ -108,7 +108,7 @@ namespace Learnly.Api.Core.Services
                 _dbContext.SaveChanges();
                 return new DefaultResponse
                 {
-                    Sucesso = true,
+                    Sucess = true,
                     Message = "As notas foram atualizadas com sucesso!"
                 };
             }
@@ -116,7 +116,7 @@ namespace Learnly.Api.Core.Services
             {
                 return new DefaultResponse
                 {
-                    Sucesso = false,
+                    Sucess = false,
                     Message = "Ocoreu um erro ao tentar excluir as notas: " + f.Message
                 };
             }
