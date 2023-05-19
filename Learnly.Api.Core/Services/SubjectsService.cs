@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Learnly.Api.Core.Data;
+using Learnly.Api.Core.Data.Dtos.Subject;
 using Learnly.Api.Core.Interfaces;
 using Learnly.Api.Core.Models;
 using Learnly.Api.Core.Utils;
@@ -125,6 +126,27 @@ namespace Learnly.Api.Core.Services
                     Sucess = false,
                     Message = "Ocoreu um erro ao tentar atualizar a matéria: " + f.Message
                 };
+            }
+        }
+
+        public List<ReadSubjectDto> GetSubjectsByStudent(int studentId)
+        {
+            try
+            {
+                var query = from subjects in _dbContext.Subjects
+                            join matriculations in _dbContext.Matriculations on subjects.Id equals matriculations.SubjectId
+                            where matriculations.StudentId == studentId
+                            select new ReadSubjectDto 
+                            { 
+                                Id = matriculations.SubjectId,
+                                Name = subjects.Name
+                            };
+
+                return query.ToList();
+            }
+            catch (Exception f)
+            {
+                throw new Exception("Erro ao buscar matérias do aluno: " + f.Message);
             }
         }
     }

@@ -10,6 +10,8 @@ namespace Learnly.Api.Core.Profiles
         {
             CreateMap<Grades, ReadGradesDto>().
                 ForMember(x => x.SubjectName, y => y.MapFrom(z => z.Subject.Name));
+            CreateMap<CreateGradesDto, Grades>().
+                ForMember(x => x.Average, y => y.MapFrom(z => (z.FirstGrade + z.SecondGrade) / 2));
         }
     }
 }

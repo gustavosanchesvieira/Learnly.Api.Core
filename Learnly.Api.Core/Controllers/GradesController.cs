@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Learnly.Api.Core.Data.Dtos.Grades;
+using Learnly.Api.Core.Models;
 using Learnly.Api.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,24 @@ namespace Learnly.Api.Core.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetGradeById(int id)
+        {
+            try
+            {
+                var grade = _gradesService.GetById(id);
+                if (grade != null)
+                {
+                    return Ok(grade);
+                }
+                return NotFound();
+            }
+            catch (Exception f)
+            {
+                return BadRequest(f.Message);
+            }
+        }
+
         [HttpGet("getGridGrades")]
         public IActionResult GetGridGrades([FromQuery] int studentId)
         {
@@ -31,6 +50,25 @@ namespace Learnly.Api.Core.Controllers
                     return Ok(gradesGrid);
                 }
                 return NotFound();
+            }
+            catch (Exception f)
+            {
+                return BadRequest(f.Message);
+            }
+        }
+
+        [HttpPost("createGrade")]
+        public IActionResult CreateGrade([FromBody]CreateGradesDto dto)
+        {
+            try
+            {
+                var grade = _mapper.Map<Grades>(dto);
+                var result = _gradesService.Create(grade);
+                if (result.Sucess)
+                {
+                    return CreatedAtAction(nameof(GetGradeById), grade);
+                }
+                return BadRequest(result.Message);
             }
             catch (Exception f)
             {
