@@ -123,35 +123,5 @@ namespace Learnly.Api.Core.Services
                 };
             }
         }
-
-        public void CreateUserStudent(CreateUserDto dto)
-        {
-            try
-            {
-                var student = new Students
-                {
-                    Name = dto.Name,
-                    LastName = dto.LastName,
-                    Email = dto.Email,
-                    BirthDay = dto.BirthDay,
-                    Cpf = dto.Cpf
-                };
-
-                _dbContext.Students.Add(student);
-                _dbContext.SaveChanges();
-
-                var user = new User
-                {
-                    Password = dto.Password,
-                    RA = "123456" ,
-                    Student = student
-                };
-
-            }
-            catch (Exception f)
-            {
-                throw new Exception("Erro ao tentar criar usuário estudante" + f.Message);
-            }
-        }
     }
 }

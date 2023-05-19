@@ -8,7 +8,8 @@ namespace Learnly.Api.Core.Profiles
     {
         public UserProfile()
         {
-            CreateMap<CreateUserDto, User>();   
+            CreateMap<CreateUserDto, User>().
+                ForMember(x => x.RA, y => y.MapFrom(z => z.StudentId.ToString("D6"))); 
         }
     }
 }

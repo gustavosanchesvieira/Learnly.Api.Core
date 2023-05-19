@@ -1,4 +1,5 @@
-﻿using Learnly.Api.Core.Services;
+﻿using AutoMapper;
+using Learnly.Api.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Learnly.Api.Core.Controllers
@@ -6,9 +7,12 @@ namespace Learnly.Api.Core.Controllers
     public class SubjectsController : ControllerBase
     {
         private SubjectsService _subjectsService;
-        public SubjectsController(SubjectsService subjectsService)
+        private IMapper _mapper;
+        public SubjectsController(SubjectsService subjectsService, IMapper mapper)
         {
             _subjectsService = subjectsService;
+            _mapper = mapper;
         }
+
     }
 }

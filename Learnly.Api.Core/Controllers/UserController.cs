@@ -38,13 +38,17 @@ namespace Learnly.Api.Core.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult RegisterUser([FromBody]CreateUserDto createUserDto)
+        public IActionResult RegisterUser([FromBody]CreateUserDto dto)
         {
             try
             {
-                
-
-                return Ok();
+                var user = _mapper.Map<User>(dto);
+                var result = _userService.Create(user);
+                if (result.Sucess)
+                {
+                    return CreatedAtAction(nameof(GetUserById), user);
+                }
+                return BadRequest(result.Message);
             }
             catch (Exception f)
             {
