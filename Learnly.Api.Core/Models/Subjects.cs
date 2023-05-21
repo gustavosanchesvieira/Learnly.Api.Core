@@ -15,5 +15,7 @@ namespace Learnly.Api.Core.Models
         public int TeacherId { get; set; }
         [JsonIgnore]
         public List<Matriculation> Matriculations { get; set; }
+        [JsonIgnore]
+        public List<Grades> Grades { get; set; }
     }
 }

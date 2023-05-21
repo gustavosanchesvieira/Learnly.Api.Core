@@ -16,6 +16,16 @@ namespace Learnly.Api.Core.Data
                 WithMany(teacher => teacher.Subjects).
                 HasForeignKey(subject => subject.TeacherId);
 
+            builder.Entity<Grades>().
+                HasOne(x => x.Subject).
+                WithMany(y => y.Grades).
+                HasForeignKey(y => y.SubjectId);
+            
+            builder.Entity<Grades>().
+                HasOne(x => x.Student).
+                WithMany(y => y.Grades).
+                HasForeignKey(y => y.StudentId);
+
             builder.Entity<Matriculation>().
                 HasKey(x => new { x.StudentId, x.SubjectId });
 
@@ -28,6 +38,7 @@ namespace Learnly.Api.Core.Data
                 HasOne(s => s.Subject).
                 WithMany(m => m.Matriculations).
                 HasForeignKey(x => x.SubjectId);
+
         }
 
         public DbSet<Subjects> Subjects { get; set; }

@@ -43,7 +43,7 @@ namespace Learnly.Api.Core.Controllers
             try
             {
                 var abcences = _abcencesService.Get();
-                if (abcences != null)
+                if (abcences != null && abcences.Any())
                 {
                     abcences = abcences.Where(x => x.StudentId == studentId).ToList();
                     var abcencesGrid = _mapper.Map<List<ReadAbcencesDto>>(abcences);
@@ -67,7 +67,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _abcencesService.Create(abcence);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetAbcenceById), abcence);
+                    return CreatedAtAction(nameof(GetAbcenceById), new { abcence.Id }, abcence);
                 }
                 return BadRequest(result.Message);
             }
@@ -92,7 +92,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _abcencesService.Update(abcence);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetAbcenceById), abcence);
+                    return Ok(abcence);
                 }
                 return BadRequest(result.Message);
 

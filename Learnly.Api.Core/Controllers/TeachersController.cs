@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Learnly.Api.Core.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class TeachersController : ControllerBase
     {
         private TeacherService _teacherService;
@@ -44,7 +46,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _teacherService.Create(teacher);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetTeacherId), teacher);
+                    return CreatedAtAction(nameof(GetTeacherId), new { teacher.Id }, teacher);
                 }
                 return BadRequest(result.Message);
             }

@@ -25,7 +25,7 @@ namespace Learnly.Api.Core.Controllers
             try
             {
                 var matriculations = _matriculationService.Get();
-                if (matriculations != null)
+                if (matriculations != null && matriculations.Any())
                 {
                     var matriculation = matriculations.FirstOrDefault(x => x.StudentId == studentId && x.SubjectId == subjectId);
                     if (matriculation != null)
@@ -50,7 +50,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _matriculationService.Create(matriculation);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetMatriculation), matriculation);
+                    return CreatedAtAction(nameof(GetMatriculation),new { matriculation.SubjectId, matriculation.StudentId }, matriculation);
                 }
                 return BadRequest(result.Message);
             }

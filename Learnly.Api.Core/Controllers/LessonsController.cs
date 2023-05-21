@@ -44,7 +44,7 @@ namespace Learnly.Api.Core.Controllers
             try
             {
                 var scheduledLessons = _lessonsService.GetScheduledLessonsByStudent(studentId);
-                if (scheduledLessons != null)
+                if (scheduledLessons != null && scheduledLessons.Any())
                 {
                     return Ok(scheduledLessons);
                 }
@@ -66,7 +66,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _lessonsService.Create(lesson);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetLessonById), lesson);
+                    return CreatedAtAction(nameof(GetLessonById), new { lesson.Id } ,lesson);
                 }
                 return BadRequest(result.Message);
             }

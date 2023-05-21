@@ -46,7 +46,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _userService.Create(user);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetUserById), user);
+                    return CreatedAtAction(nameof(GetUserById), new { user.Id }, user);
                 }
                 return BadRequest(result.Message);
             }

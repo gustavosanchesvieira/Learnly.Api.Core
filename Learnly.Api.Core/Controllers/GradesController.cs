@@ -43,7 +43,7 @@ namespace Learnly.Api.Core.Controllers
             try
             {
                 var grades = _gradesService.Get();
-                if (grades != null)
+                if (grades != null && grades.Any())
                 {
                     grades = grades.Where(x => x.StudentId == studentId).ToList();
                     var gradesGrid = _mapper.Map<List<ReadGradesDto>>(grades);
@@ -66,7 +66,7 @@ namespace Learnly.Api.Core.Controllers
                 var result = _gradesService.Create(grade);
                 if (result.Sucess)
                 {
-                    return CreatedAtAction(nameof(GetGradeById), grade);
+                    return CreatedAtAction(nameof(GetGradeById), new { grade.Id }, grade);
                 }
                 return BadRequest(result.Message);
             }

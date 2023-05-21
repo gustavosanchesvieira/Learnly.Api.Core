@@ -3,6 +3,7 @@ using System;
 using Learnly.Api.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Learnly.Api.Core.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230519223438_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,13 +243,13 @@ namespace Learnly.Api.Core.Migrations
             modelBuilder.Entity("Learnly.Api.Core.Models.Grades", b =>
                 {
                     b.HasOne("Learnly.Api.Core.Models.Students", "Student")
-                        .WithMany("Grades")
+                        .WithMany()
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Learnly.Api.Core.Models.Subjects", "Subject")
-                        .WithMany("Grades")
+                        .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -310,15 +313,11 @@ namespace Learnly.Api.Core.Migrations
 
             modelBuilder.Entity("Learnly.Api.Core.Models.Students", b =>
                 {
-                    b.Navigation("Grades");
-
                     b.Navigation("Matriculations");
                 });
 
             modelBuilder.Entity("Learnly.Api.Core.Models.Subjects", b =>
                 {
-                    b.Navigation("Grades");
-
                     b.Navigation("Matriculations");
                 });
 
